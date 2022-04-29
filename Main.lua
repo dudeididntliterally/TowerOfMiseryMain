@@ -229,3 +229,31 @@ Main:Button(
     loadstring(game:HttpGet(('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'),true))()
 end
 )
+
+Main:Button(
+    "Auto Farm",
+    function()
+_G.Auto = true
+
+while _G.Auto == true do
+
+local gmt = getrawmetatable(game)
+setreadonly(gmt, false)
+local oldindex = gmt.__index
+gmt.__index = newcclosure(function(self,b)
+    if b == "CFrame" then
+        CFrame.new()
+    end
+return oldindex(self,b)
+end)
+
+wait(0.2)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-118.98053741455, 254.00015258789, 47.062557220459)
+end
+end)
+
+Main:Button(
+    "Stop Auto Farm",
+    function()
+_G.Auto = false
+end)
