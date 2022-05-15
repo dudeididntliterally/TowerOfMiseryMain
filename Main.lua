@@ -111,7 +111,7 @@ gmt.__index = newcclosure(function(self,b)
 return oldindex(self,b)
 end)
 
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-118.98053741455, 254.00015258789, 47.062557220459)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-116.411705, 253.999863, 48.9925232)
 end)
 
 xButton.MouseButton1Down:connect(function()
@@ -257,3 +257,108 @@ Main:Button(
     function()
 _G.Auto = false
 end)
+
+Main:Button(
+    "Buy Everything",
+    function()
+local args = {
+    [1] = "QuickSpawn"
+}
+
+game:GetService("ReplicatedStorage").BuyQuickSpawn:InvokeServer(unpack(args))
+wait(0.1)
+local args = {
+    [1] = "Immunity"
+}
+
+game:GetService("ReplicatedStorage").BuyImmunity:InvokeServer(unpack(args))
+wait(0.1)
+local args = {
+    [1] = "GlassTower"
+}
+
+game:GetService("ReplicatedStorage").BuyGlassTower:InvokeServer(unpack(args))
+wait(0.1)
+local args = {
+    [1] = "HighSpeed"
+}
+
+game:GetService("ReplicatedStorage").BuyHighSpeed:InvokeServer(unpack(args))
+wait(0.1)
+local args = {
+    [1] = "LowGravity"
+}
+
+game:GetService("ReplicatedStorage").BuyLowGravity:InvokeServer(unpack(args))
+wait(0.1)
+local args = {
+    [1] = "NightMode"
+}
+
+game:GetService("ReplicatedStorage").BuyNightMode:InvokeServer(unpack(args))
+wait(0.1)
+local args = {
+    [1] = "SpeedTimer"
+}
+
+game:GetService("ReplicatedStorage").BuySpeedTimer:InvokeServer(unpack(args))
+wait(0.5)
+print("Auto Bought Everything!")
+end
+)
+
+Main:Button(
+    "Auto Respawn",
+    function()
+	game:GetService("StarterGui"):SetCore("ChatMakeSystemMessage",{
+		Text = "Press Everytime You Die To Auto Respawn (same location)",
+		Color = Color3.fromRGB(207, 96, 36)
+	})
+while true do
+wait()
+local blah = (game.Players.LocalPlayer.Name)
+
+      if game:GetService("Workspace")[blah].Humanoid.Health == 0 then
+	   saved = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+		local A_1 = "LocalPlayer"
+
+local Respawn = game:GetService("ReplicatedStorage").Respawn_Player
+Respawn:InvokeServer(A_1)
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = saved
+end
+wait()
+local blah = (game.Players.LocalPlayer.Name)
+
+      if game:GetService("Workspace")[blah].Humanoid.Health == 0 then
+	   saved = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+		local A_1 = "LocalPlayer"
+
+local Respawn = game:GetService("ReplicatedStorage").Respawn_Player
+Respawn:InvokeServer(A_1)
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = saved
+end
+wait()
+local blah = (game.Players.LocalPlayer.Name)
+
+      if game:GetService("Workspace")[blah].Humanoid.Health == 0 then
+	   saved = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+		local A_1 = "LocalPlayer"
+
+local Respawn = game:GetService("ReplicatedStorage").Respawn_Player
+Respawn:InvokeServer(A_1)
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = saved
+end
+wait()
+local blah = (game.Players.LocalPlayer.Name)
+
+      if game:GetService("Workspace")[blah].Humanoid.Health == 0 then
+	   saved = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+		local A_1 = "LocalPlayer"
+
+local Respawn = game:GetService("ReplicatedStorage").Respawn_Player
+Respawn:InvokeServer(A_1)
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = saved
+end
+end
+end
+)
