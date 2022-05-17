@@ -1,4 +1,4 @@
---Go skid if you want to what ever and even if you want give your self credit I just made this for fun not to obfuscate or anything so enjoy (also why I did not put credits because I really don't care)
+--i dont actually understand the reason why now they wanna take the time to write this code like: Head:Destoy() just doesnt make any sense but what ever
 
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/mag"))()
 local Main = Library.Category("Scripts", "Main Scripts", Color3.fromRGB(0, 0, 255))
@@ -7,7 +7,7 @@ Main:Section("Main Stuff")
 Main:Button(
     "GodMode (basically)",
     function()
-    game.ReplicatedStorage.ImmunityEnabled.Value = true
+    game.ReplicatedStorage.Server_Data.ImmunityEnabled.Value = true
 end
 )
 
@@ -248,7 +248,7 @@ return oldindex(self,b)
 end)
 
 wait(0.2)
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-118.98053741455, 254.00015258789, 47.062557220459)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-116.411705, 253.999863, 48.9925232)
 end
 end)
 
@@ -265,43 +265,43 @@ local args = {
     [1] = "QuickSpawn"
 }
 
-game:GetService("ReplicatedStorage").BuyQuickSpawn:InvokeServer(unpack(args))
+game:GetService("ReplicatedStorage").Remote_Functions.Shop.Purchase_Quick_Spawn:InvokeServer(unpack(args))
 wait(0.1)
 local args = {
     [1] = "Immunity"
 }
 
-game:GetService("ReplicatedStorage").BuyImmunity:InvokeServer(unpack(args))
+game:GetService("ReplicatedStorage").Remote_Functions.Shop.Purchase_Immunity:InvokeServer(unpack(args))
 wait(0.1)
 local args = {
     [1] = "GlassTower"
 }
 
-game:GetService("ReplicatedStorage").BuyGlassTower:InvokeServer(unpack(args))
+game:GetService("ReplicatedStorage").Remote_Functions.Shop.Purchase_Glass_Tower:InvokeServer(unpack(args))
 wait(0.1)
 local args = {
     [1] = "HighSpeed"
 }
 
-game:GetService("ReplicatedStorage").BuyHighSpeed:InvokeServer(unpack(args))
+game:GetService("ReplicatedStorage").Remote_Functions.Shop.Purchase_High_Speed:InvokeServer(unpack(args))
 wait(0.1)
 local args = {
     [1] = "LowGravity"
 }
 
-game:GetService("ReplicatedStorage").BuyLowGravity:InvokeServer(unpack(args))
+game:GetService("ReplicatedStorage").Remote_Functions.Shop.Purchase_Low_Gravity:InvokeServer(unpack(args))
 wait(0.1)
 local args = {
     [1] = "NightMode"
 }
 
-game:GetService("ReplicatedStorage").BuyNightMode:InvokeServer(unpack(args))
+game:GetService("ReplicatedStorage").Remote_Functions.Shop.Purchase_Night_Mode:InvokeServer(unpack(args))
 wait(0.1)
 local args = {
     [1] = "SpeedTimer"
 }
 
-game:GetService("ReplicatedStorage").BuySpeedTimer:InvokeServer(unpack(args))
+game:GetService("ReplicatedStorage").Remote_Functions.Shop.Purchase_Speed_Timer:InvokeServer(unpack(args))
 wait(0.5)
 print("Auto Bought Everything!")
 end
@@ -322,7 +322,7 @@ local blah = (game.Players.LocalPlayer.Name)
 	   saved = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
 		local A_1 = "LocalPlayer"
 
-local Respawn = game:GetService("ReplicatedStorage").Respawn_Player
+local Respawn = game:GetService("ReplicatedStorage").Remote_Functions.General.Respawn_Player
 Respawn:InvokeServer(A_1)
         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = saved
 end
@@ -333,7 +333,7 @@ local blah = (game.Players.LocalPlayer.Name)
 	   saved = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
 		local A_1 = "LocalPlayer"
 
-local Respawn = game:GetService("ReplicatedStorage").Respawn_Player
+local Respawn = game:GetService("ReplicatedStorage").Remote_Functions.General.Respawn_Player
 Respawn:InvokeServer(A_1)
         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = saved
 end
@@ -344,7 +344,7 @@ local blah = (game.Players.LocalPlayer.Name)
 	   saved = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
 		local A_1 = "LocalPlayer"
 
-local Respawn = game:GetService("ReplicatedStorage").Respawn_Player
+local Respawn = game:GetService("ReplicatedStorage").Remote_Functions.General.Respawn_Player
 Respawn:InvokeServer(A_1)
         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = saved
 end
@@ -355,7 +355,7 @@ local blah = (game.Players.LocalPlayer.Name)
 	   saved = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
 		local A_1 = "LocalPlayer"
 
-local Respawn = game:GetService("ReplicatedStorage").Respawn_Player
+local Respawn = game:GetService("ReplicatedStorage").Remote_Functions.General.Respawn_Player
 Respawn:InvokeServer(A_1)
         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = saved
 end
