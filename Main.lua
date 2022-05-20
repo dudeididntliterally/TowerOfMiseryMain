@@ -311,7 +311,7 @@ Main:Button(
     "Auto Respawn",
     function()
 	game:GetService("StarterGui"):SetCore("ChatMakeSystemMessage",{
-		Text = "UPDATE: ONLY PRESS ONCE OR IT FIRES THE REMOTE MORE (same location)",
+		Text = "UPDATE: ONLY PRESS ONCE OR IT FIRES THE REMOTE MORE, ALSO PRESS AFTER EVERY ROUND (same location)",
 		Color = Color3.fromRGB(207, 96, 36)
 	})
 while true do
