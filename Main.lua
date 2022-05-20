@@ -1,4 +1,4 @@
---i dont actually understand the reason why now they wanna take the time to write this code like: Head:Destoy() just doesnt make any sense but what ever
+--updated auto respawn should work everytime now
 
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/mag"))()
 local Main = Library.Category("Scripts", "Main Scripts", Color3.fromRGB(0, 0, 255))
@@ -311,7 +311,7 @@ Main:Button(
     "Auto Respawn",
     function()
 	game:GetService("StarterGui"):SetCore("ChatMakeSystemMessage",{
-		Text = "UPDATE: ONLY PRESS ONCE OR IT FIRES THE REMOTE MORE AND IF IT BREAKS PRESS ONCE AFTER A FEW RESPAWNS (same location)",
+		Text = "UPDATE: ONLY PRESS ONCE OR IT FIRES THE REMOTE MORE (same location)",
 		Color = Color3.fromRGB(207, 96, 36)
 	})
 while true do
@@ -320,7 +320,7 @@ local blah = (game.Players.LocalPlayer.Name)
 
       if game:GetService("Workspace")[blah].Humanoid.Health == 0 then
 	   saved = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
-		local A_1 = "LocalPlayer"
+		local A_1 = game:GetService("Players").LocalPlayer
 
 local Respawn = game:GetService("ReplicatedStorage").Remote_Functions.General.Respawn_Player
 Respawn:InvokeServer(A_1)
@@ -331,7 +331,7 @@ local blah = (game.Players.LocalPlayer.Name)
 
       if game:GetService("Workspace")[blah].Humanoid.Health == 0 then
 	   saved = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
-		local A_1 = "LocalPlayer"
+		local A_1 = game:GetService("Players").LocalPlayer
 
 local Respawn = game:GetService("ReplicatedStorage").Remote_Functions.General.Respawn_Player
 Respawn:InvokeServer(A_1)
@@ -342,7 +342,7 @@ local blah = (game.Players.LocalPlayer.Name)
 
       if game:GetService("Workspace")[blah].Humanoid.Health == 0 then
 	   saved = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
-		local A_1 = "LocalPlayer"
+		local A_1 = game:GetService("Players").LocalPlayer
 
 local Respawn = game:GetService("ReplicatedStorage").Remote_Functions.General.Respawn_Player
 Respawn:InvokeServer(A_1)
@@ -353,7 +353,7 @@ local blah = (game.Players.LocalPlayer.Name)
 
       if game:GetService("Workspace")[blah].Humanoid.Health == 0 then
 	   saved = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
-		local A_1 = "LocalPlayer"
+		local A_1 = game:GetService("Players").LocalPlayer
 
 local Respawn = game:GetService("ReplicatedStorage").Remote_Functions.General.Respawn_Player
 Respawn:InvokeServer(A_1)
