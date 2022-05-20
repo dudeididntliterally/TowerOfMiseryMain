@@ -256,7 +256,7 @@ Main:Button(
     "Both Coils (free)",
     function()
 	game:GetService("StarterGui"):SetCore("ChatMakeSystemMessage",{
-		Text = "Speed coil is broken atm because the game is weird so but the gravity coil works :D",
+		Text = "Speed coil is broken *SOME WHAT* atm because the game is weird so but the gravity coil works :D",
 		Color = Color3.fromRGB(207, 96, 36)
 	})
 local args = {
