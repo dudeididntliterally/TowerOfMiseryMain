@@ -1,4 +1,4 @@
---updated auto respawn should work everytime now
+--super epic amoog us
 
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/mag"))()
 local Main = Library.Category("Scripts", "Main Scripts", Color3.fromRGB(0, 0, 255))
@@ -253,6 +253,27 @@ end
 end)
 
 Main:Button(
+    "Both Coils (free)",
+    function()
+	game:GetService("StarterGui"):SetCore("ChatMakeSystemMessage",{
+		Text = "Speed coil is broken atm because the game is weird so but the gravity coil works :D",
+		Color = Color3.fromRGB(207, 96, 36)
+	})
+local args = {
+    [1] = "Gravity Coil"
+}
+
+game:GetService("ReplicatedStorage").Remote_Functions.General.Equip_Coil:InvokeServer(unpack(args))
+wait(0.1)
+local args = {
+    [1] = "Speed Coil"
+}
+
+game:GetService("ReplicatedStorage").Remote_Functions.General.Equip_Coil:InvokeServer(unpack(args))
+end
+)
+
+Main:Button(
     "Stop Auto Farm",
     function()
 _G.Auto = false
@@ -360,5 +381,4 @@ Respawn:InvokeServer(A_1)
         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = saved
 end
 end
-end
-)
+end)
