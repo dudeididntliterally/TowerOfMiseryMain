@@ -1,4 +1,4 @@
---super epic amoog us
+--big sussy among us
 
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/mag"))()
 local Main = Library.Category("Scripts", "Main Scripts", Color3.fromRGB(0, 0, 255))
@@ -213,13 +213,6 @@ mt.__namecall = newcclosure(function(self, ...)
     end
     return namecall(self, table.unpack(args))
 end)
-end
-)
-
-Main:Button(
-    "FE Admin (Press ; )",
-    function()
-    loadstring(game:HttpGet("https://pastebin.com/raw/MQ3wc7Zq", true))()
 end
 )
 
