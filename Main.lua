@@ -224,6 +224,21 @@ end
 )
 
 Main:Button(
+    "Gravity Coil (free)",
+    function()
+	game:GetService("StarterGui"):SetCore("ChatMakeSystemMessage",{
+		Text = "Removed: Speed Coil",
+		Color = Color3.fromRGB(207, 96, 36)
+	})
+local args = {
+    [1] = "Gravity Coil"
+}
+
+game:GetService("ReplicatedStorage").Remote_Functions.General.Equip_Coil:InvokeServer(unpack(args))
+end
+)
+
+Main:Button(
     "Auto Farm",
     function()
 _G.Auto = true
@@ -244,27 +259,6 @@ wait(0.2)
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-116.411705, 253.999863, 48.9925232)
 end
 end)
-
-Main:Button(
-    "Both Coils (free)",
-    function()
-	game:GetService("StarterGui"):SetCore("ChatMakeSystemMessage",{
-		Text = "Speed coil is broken *SOME WHAT* atm because the game is weird so but the gravity coil works :D",
-		Color = Color3.fromRGB(207, 96, 36)
-	})
-local args = {
-    [1] = "Gravity Coil"
-}
-
-game:GetService("ReplicatedStorage").Remote_Functions.General.Equip_Coil:InvokeServer(unpack(args))
-wait(0.1)
-local args = {
-    [1] = "Speed Coil"
-}
-
-game:GetService("ReplicatedStorage").Remote_Functions.General.Equip_Coil:InvokeServer(unpack(args))
-end
-)
 
 Main:Button(
     "Stop Auto Farm",
