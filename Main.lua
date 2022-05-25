@@ -224,10 +224,10 @@ end
 )
 
 Main:Button(
-    "Gravity Coil (free)",
+    "Both Coils (free)",
     function()
 	game:GetService("StarterGui"):SetCore("ChatMakeSystemMessage",{
-		Text = "Removed: Speed Coil",
+		Text = "Updated Broken Walkspeed For: Speed Coil",
 		Color = Color3.fromRGB(207, 96, 36)
 	})
 local args = {
@@ -235,6 +235,14 @@ local args = {
 }
 
 game:GetService("ReplicatedStorage").Remote_Functions.General.Equip_Coil:InvokeServer(unpack(args))
+wait()
+local args = {
+    [1] = "Speed Coil"
+}
+
+game:GetService("ReplicatedStorage").Remote_Functions.General.Equip_Coil:InvokeServer(unpack(args))
+wait(0.3)
+game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16
 end
 )
 
@@ -274,37 +282,37 @@ local args = {
 }
 
 game:GetService("ReplicatedStorage").Remote_Functions.Shop.Purchase_Quick_Spawn:InvokeServer(unpack(args))
-wait(0.1)
+wait()
 local args = {
     [1] = "Immunity"
 }
 
 game:GetService("ReplicatedStorage").Remote_Functions.Shop.Purchase_Immunity:InvokeServer(unpack(args))
-wait(0.1)
+wait()
 local args = {
     [1] = "GlassTower"
 }
 
 game:GetService("ReplicatedStorage").Remote_Functions.Shop.Purchase_Glass_Tower:InvokeServer(unpack(args))
-wait(0.1)
+wait()
 local args = {
     [1] = "HighSpeed"
 }
 
 game:GetService("ReplicatedStorage").Remote_Functions.Shop.Purchase_High_Speed:InvokeServer(unpack(args))
-wait(0.1)
+wait()
 local args = {
     [1] = "LowGravity"
 }
 
 game:GetService("ReplicatedStorage").Remote_Functions.Shop.Purchase_Low_Gravity:InvokeServer(unpack(args))
-wait(0.1)
+wait()
 local args = {
     [1] = "NightMode"
 }
 
 game:GetService("ReplicatedStorage").Remote_Functions.Shop.Purchase_Night_Mode:InvokeServer(unpack(args))
-wait(0.1)
+wait()
 local args = {
     [1] = "SpeedTimer"
 }
