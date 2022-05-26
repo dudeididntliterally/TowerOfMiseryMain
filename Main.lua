@@ -224,10 +224,10 @@ end
 )
 
 Main:Button(
-    "Both Coils (free)",
+    "Gravity Coil (free)",
     function()
 	game:GetService("StarterGui"):SetCore("ChatMakeSystemMessage",{
-		Text = "Updated Broken Walkspeed For: Speed Coil",
+		Text = "Still Breaks: Speed Coil",
 		Color = Color3.fromRGB(207, 96, 36)
 	})
 local args = {
@@ -235,16 +235,6 @@ local args = {
 }
 
 game:GetService("ReplicatedStorage").Remote_Functions.General.Equip_Coil:InvokeServer(unpack(args))
-wait()
-local args = {
-    [1] = "Speed Coil"
-}
-
-game:GetService("ReplicatedStorage").Remote_Functions.General.Equip_Coil:InvokeServer(unpack(args))
-wait(0.3)
-while wait(0.5) do
-game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16
-end
 end
 )
 
