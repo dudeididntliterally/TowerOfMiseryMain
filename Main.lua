@@ -1,4 +1,4 @@
---Most OP Tower Of Misery Script?
+--Most OP Out There
 
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/mag"))()
 local Main = Library.Category("Scripts", "Main Scripts", Color3.fromRGB(0, 0, 255))
@@ -19,7 +19,7 @@ end
 )
 
 Main:Button(
-    "Teleport Bypass",
+    "Teleport To Top",
     function()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-117.169624, 253.999847, 49.9136276)
 end
