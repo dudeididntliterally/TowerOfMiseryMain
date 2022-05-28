@@ -1,4 +1,4 @@
---Most OP Out There
+--Most OP Script Out There
 
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/mag"))()
 local Main = Library.Category("Scripts", "Main Scripts", Color3.fromRGB(0, 0, 255))
@@ -259,7 +259,7 @@ Main:Button(
     "Get Winners Sword",
     function()
 	game:GetService("StarterGui"):SetCore("ChatMakeSystemMessage",{
-		Text = "Using this will teleport you back to the winners room every round so just teleport back with the teleport bypass.",
+		Text = "Using this will teleport you back to the winners room every round so just teleport back with the teleport to top",
 		Color = Color3.fromRGB(207, 96, 36)
 	})
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-117.169624, 253.999847, 49.9136276)
