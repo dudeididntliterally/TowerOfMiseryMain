@@ -1,4 +1,4 @@
---Updated
+--Most OP Tower Of Misery Script?
 
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/mag"))()
 local Main = Library.Category("Scripts", "Main Scripts", Color3.fromRGB(0, 0, 255))
@@ -21,17 +21,7 @@ end
 Main:Button(
     "Teleport Bypass",
     function()
-local gmt = getrawmetatable(game)
-setreadonly(gmt, false)
-local oldindex = gmt.__index
-gmt.__index = newcclosure(function(self,b)
-    if b == "CFrame" then
-        CFrame.new()
-    end
-return oldindex(self,b)
-end)
-
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-116.411705, 253.999863, 48.9925232)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-117.169624, 253.999847, 49.9136276)
 end
 )
 
@@ -151,19 +141,7 @@ Main:Button(
 _G.Auto = true
 
 while _G.Auto == true do
-
-local gmt = getrawmetatable(game)
-setreadonly(gmt, false)
-local oldindex = gmt.__index
-gmt.__index = newcclosure(function(self,b)
-    if b == "CFrame" then
-        CFrame.new()
-    end
-return oldindex(self,b)
-end)
-
-wait(0.2)
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-116.411705, 253.999863, 48.9925232)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-117.169624, 253.999847, 49.9136276)
 end
 end)
 
@@ -276,3 +254,28 @@ Respawn:InvokeServer(A_1)
 end
 end
 end)
+
+Main:Button(
+    "Get Winners Sword",
+    function()
+	game:GetService("StarterGui"):SetCore("ChatMakeSystemMessage",{
+		Text = "Using this will teleport you back to the winners room every round so just teleport back with the teleport bypass.",
+		Color = Color3.fromRGB(207, 96, 36)
+	})
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-117.169624, 253.999847, 49.9136276)
+wait(0.2)
+local playerHead = game.Players.LocalPlayer.Character.Head
+for i, v in pairs(game:GetService("Workspace").TopSection.PortalTeleportationModel.PortalDoor:GetDescendants()) do
+    if v.Name == "TouchInterest" and v.Parent then
+    firetouchinterest(playerHead, v.Parent, 0)
+    wait(0.1)
+    firetouchinterest(playerHead, v.Parent, 1)
+    break;
+end
+end
+wait(0.3)
+fireclickdetector(game:GetService("Workspace").WinnersRoomServerSide.SwordGiver.ClickPart.ClickDetector)
+wait(0.2)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-117.169624, 253.999847, 49.9136276)
+end
+)
