@@ -1,4 +1,4 @@
---Most OP Script Out There
+--Put Teleport To Winners Room On Script
 
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/mag"))()
 local Main = Library.Category("Scripts", "Main Scripts", Color3.fromRGB(0, 0, 255))
@@ -277,5 +277,12 @@ wait(0.3)
 fireclickdetector(game:GetService("Workspace").WinnersRoomServerSide.SwordGiver.ClickPart.ClickDetector)
 wait(0.2)
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-117.169624, 253.999847, 49.9136276)
+end
+)
+
+Main:Button(
+    "TP To Winners Room",
+    function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(27.3365688, 233.999954, 2818.37964)
 end
 )
