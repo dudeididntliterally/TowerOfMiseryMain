@@ -1,8 +1,8 @@
---i love playing with this games issues lol (not really issues but idk what else to say)
+--Added new UI
 
-local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/mag"))()
-local Main = Library.Category("Scripts", "Main Scripts", Color3.fromRGB(0, 0, 255))
-Main:Section("Main Stuff")
+local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/dudeididntliterally/lolwhatisthis/main/SenpaiLib"))();
+local Main = library:CreateWindow("Scripts");
+local Other = library:CreateWindow("Other");
 
 Main:Button(
     "GodMode (basically)",
@@ -25,7 +25,7 @@ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-117.169
 end
 )
 
-Main:Button(
+Other:Button(
     "Bypass WalkSpeed",
     function()
     local old
@@ -49,7 +49,7 @@ end))
 end
 )
 
-Main:Button(
+Other:Button(
     "Bypass JumpPower",
     function()
     local old
@@ -73,7 +73,7 @@ end))
 end
 )
 
-Main:Slider(
+Other:Slider(
     "Speed (bypass 1st)",
     16,
     300,
@@ -83,7 +83,7 @@ Main:Slider(
 end
 )
 
-Main:Slider(
+Other:Slider(
     "Jump (bypass 1st)",
     50,
     350,
@@ -151,7 +151,7 @@ Main:Button(
 _G.Auto = false
 end)
 
-Main:Button(
+Other:Button(
     "Buy Everything",
     function()
 local args = {
@@ -280,7 +280,7 @@ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-117.169
 end
 )
 
-Main:Button(
+Other:Button(
     "TP To Winners Room",
     function()
 local playerHead = game.Players.LocalPlayer.Character.Head
@@ -297,14 +297,14 @@ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(36.13695
 end
 )
 
-Main:Button(
+Other:Button(
     "Play Flappy Bird",
     function()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-54.7847023, 234.399963, 2805.98145)
 end
 )
 
-Main:Button(
+Other:Button(
     "Play Track Slide",
     function()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-53.9553223, 234.199951, 2824.10547)
