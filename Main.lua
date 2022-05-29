@@ -256,7 +256,7 @@ end
 end)
 
 Main:Button(
-    "Get Winners Sword",
+    "Get Sword",
     function()
 	game:GetService("StarterGui"):SetCore("ChatMakeSystemMessage",{
 		Text = "Using this will teleport you back to the winners room every round so just teleport back with the teleport to top",
