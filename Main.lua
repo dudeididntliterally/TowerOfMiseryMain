@@ -1,5 +1,10 @@
 --Added new UI
+game:GetService("StarterGui"):SetCore("ChatMakeSystemMessage",{
+	Text = "with this UI you might have to execute twice to get all scripts depends have fun!",
+	Color = Color3.fromRGB(207, 96, 36)
+})
 
+wait(0.2)
 local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/dudeididntliterally/lolwhatisthis/main/SenpaiLib"))();
 local Main = library:CreateWindow("Scripts");
 local Other = library:CreateWindow("Other");
