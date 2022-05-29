@@ -260,7 +260,7 @@ end
 end
 end)
 
-Main:Button(
+Other:Button(
     "Get Sword",
     function()
 	game:GetService("StarterGui"):SetCore("ChatMakeSystemMessage",{
