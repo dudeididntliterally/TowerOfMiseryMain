@@ -1,38 +1,29 @@
---Added new UI
-game:GetService("StarterGui"):SetCore("ChatMakeSystemMessage",{
-	Text = "with this UI you might have to execute twice to get all scripts depends have fun!",
-	Color = Color3.fromRGB(207, 96, 36)
-})
+--Added new UI (again) MORE BETTER UI AND WORKS PERFECT
 
-wait(0.2)
-local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/dudeididntliterally/lolwhatisthis/main/SenpaiLib"))();
-local Main = library:CreateWindow("Scripts");
-local Other = library:CreateWindow("Other");
+local GUI = loadstring(game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/aaaa"))()
 
-Main:Button(
-    "GodMode (basically)",
-    function()
+local Scripts = GUI:CreateWindow("Scripts","Main Scripts")
+
+local Home = Scripts:addPage("Home",1,true,6)
+local Other = Scripts:addPage("Others",1,true,6)
+local Teleport = Scripts:addPage("Teleports",1,true,6)
+
+Home:addButton("GodMode",function()
     game.ReplicatedStorage.Server_Data.ImmunityEnabled.Value = true
 end
 )
 
-Main:Button(
-    "Fly (e = toggle)",
-    function()
+Home:addButton("Fly (e = toggle)",function()
 loadstring(game:HttpGet('https://pastebin.com/raw/d32zM888'))()
 end
 )
 
-Main:Button(
-    "Teleport To Top",
-    function()
+Teleport:addButton("TP To Top",function()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-117.169624, 253.999847, 49.9136276)
 end
 )
 
-Other:Button(
-    "Bypass WalkSpeed",
-    function()
+Other:addButton("Bypass WalkSpeed",function()
     local old
 old = hookfunction(getrawmetatable(game).__namecall,(function(...)
     local args = {...}
@@ -54,9 +45,7 @@ end))
 end
 )
 
-Other:Button(
-    "Bypass JumpPower",
-    function()
+Other:addButton("Bypass JumpPower",function()
     local old
 old = hookfunction(getrawmetatable(game).__namecall,(function(...)
     local args = {...}
@@ -78,29 +67,17 @@ end))
 end
 )
 
-Other:Slider(
-    "Speed (bypass 1st)",
-    16,
-    300,
-    true,
-    function(numbers)
-    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = numbers
+Other:addSlider("Speed", 16, 300,function(arg)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = arg
 end
 )
 
-Other:Slider(
-    "Jump (bypass 1st)",
-    50,
-    350,
-    true,
-    function(numbers)
-    game.Players.LocalPlayer.Character.Humanoid.JumpPower = numbers
+Other:addSlider("JumpPower", 50, 350,function(arg)
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = arg
 end
 )
 
-Main:Button(
-    "Bypass Anti Cheat",
-    function()
+Home:addButton("Anti Cheat Bypass",function()
 local mt = getrawmetatable(game)
 make_writeable(mt)
 
@@ -118,16 +95,12 @@ end)
 end
 )
 
-Main:Button(
-    "Inf Yield",
-    function()
+Home:addButton("Inf Yield",function()
     loadstring(game:HttpGet(('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'),true))()
 end
 )
 
-Main:Button(
-    "Gravity Coil (free)",
-    function()
+Home:addButton("Gravity Coil (free)",function()
 	game:GetService("StarterGui"):SetCore("ChatMakeSystemMessage",{
 		Text = "Still Breaks: Speed Coil",
 		Color = Color3.fromRGB(207, 96, 36)
@@ -140,25 +113,14 @@ game:GetService("ReplicatedStorage").Remote_Functions.General.Equip_Coil:InvokeS
 end
 )
 
-Main:Button(
-    "Auto Farm",
-    function()
-_G.Auto = true
-
-while _G.Auto == true do
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-117.169624, 253.999847, 49.9136276)
+Teleport:addButton("Auto Farm (NOT WORKING)",function()
+    warn("not working")
+    wait(0.5)
+    print("not working")
 end
-end)
+)
 
-Main:Button(
-    "Stop Auto Farm",
-    function()
-_G.Auto = false
-end)
-
-Other:Button(
-    "Buy Everything",
-    function()
+Other:addButton("Buy Everything",function()
 local args = {
     [1] = "QuickSpawn"
 }
@@ -205,9 +167,7 @@ print("Auto Bought Everything!")
 end
 )
 
-Main:Button(
-    "Auto Respawn",
-    function()
+Home:addButton("Auto Respawn",function()
 	game:GetService("StarterGui"):SetCore("ChatMakeSystemMessage",{
 		Text = "UPDATE: ONLY PRESS ONCE OR IT FIRES THE REMOTE MORE, ALSO PRESS AFTER EVERY ROUND (same location)",
 		Color = Color3.fromRGB(207, 96, 36)
@@ -260,9 +220,7 @@ end
 end
 end)
 
-Other:Button(
-    "Get Sword",
-    function()
+Other:addButton("Get Sword",function()
 	game:GetService("StarterGui"):SetCore("ChatMakeSystemMessage",{
 		Text = "Using this will teleport you back to the winners room every round so just teleport back with the teleport to top",
 		Color = Color3.fromRGB(207, 96, 36)
@@ -285,9 +243,7 @@ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-117.169
 end
 )
 
-Other:Button(
-    "TP To Winners Room",
-    function()
+Teleport:addButton("TP Winners Room",function()
 local playerHead = game.Players.LocalPlayer.Character.Head
 for i, v in pairs(game:GetService("Workspace").TopSection.PortalTeleportationModel.PortalDoor:GetDescendants()) do
     if v.Name == "TouchInterest" and v.Parent then
@@ -302,16 +258,12 @@ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(36.13695
 end
 )
 
-Other:Button(
-    "Play Flappy Bird",
-    function()
+Teleport:addButton("Flappy Bird",function()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-54.7847023, 234.399963, 2805.98145)
 end
 )
 
-Other:Button(
-    "Play Track Slide",
-    function()
+Teleport:addButton("Track Slide",function()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-53.9553223, 234.199951, 2824.10547)
 end
 )
