@@ -1,4 +1,4 @@
---Put Teleport To Winners Room On Script
+--i love playing with this games issues lol (not really issues but idk what else to say)
 
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/mag"))()
 local Main = Library.Category("Scripts", "Main Scripts", Color3.fromRGB(0, 0, 255))
@@ -283,6 +283,30 @@ end
 Main:Button(
     "TP To Winners Room",
     function()
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(27.3365688, 233.999954, 2818.37964)
+local playerHead = game.Players.LocalPlayer.Character.Head
+for i, v in pairs(game:GetService("Workspace").TopSection.PortalTeleportationModel.PortalDoor:GetDescendants()) do
+    if v.Name == "TouchInterest" and v.Parent then
+    firetouchinterest(playerHead, v.Parent, 0)
+    wait(0.1)
+    firetouchinterest(playerHead, v.Parent, 1)
+    break;
+end
+end
+wait(0.2)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(36.1369514, 233.999954, 2820.86865)
+end
+)
+
+Main:Button(
+    "Play Flappy Bird",
+    function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-54.7847023, 234.399963, 2805.98145)
+end
+)
+
+Main:Button(
+    "Play Track Slide",
+    function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-53.9553223, 234.199951, 2824.10547)
 end
 )
