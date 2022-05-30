@@ -2,7 +2,7 @@
 
 local GUI = loadstring(game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/aaaa"))()
 
-local Scripts = GUI:CreateWindow("Scripts","Main Scripts")
+local Scripts = GUI:CreateWindow("Tower Of Misery","Main")
 
 local Home = Scripts:addPage("Home",1,true,6)
 local Other = Scripts:addPage("Others",1,true,6)
