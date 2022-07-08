@@ -1,4 +1,4 @@
---Bypassed some of the new anti cheat they put in (GetPropertyChangedSignal)
+--Updated
 
 local GUI = loadstring(game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/aaaa"))()
 local Scripts = GUI:CreateWindow("Tower Of Misery","Main")
@@ -54,7 +54,7 @@ end)
 
 AntiCheat:addButton("Anti Cheat Bypass (fly)",function()
 local h = game.Players.LocalPlayer.Character.HumanoidRootPart
-for i,v in pairs(getconnections(h:GetPropertyChangedSignal"Size")) do
+for i,v in pairs(getconnections(h:GetPropertyChangedSignal"Velocity")) do
    v:Disable()
 end
 end)
