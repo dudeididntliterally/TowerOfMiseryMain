@@ -1,12 +1,12 @@
---Added new UI (again) MORE BETTER UI AND WORKS PERFECT
+--Bypassed some of the new anti cheat they put in (GetPropertyChangedSignal)
 
 local GUI = loadstring(game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/aaaa"))()
-
 local Scripts = GUI:CreateWindow("Tower Of Misery","Main")
 
 local Home = Scripts:addPage("Home",1,true,6)
 local Other = Scripts:addPage("Others",1,true,6)
 local Teleport = Scripts:addPage("Teleports",1,true,6)
+local AntiCheat = Scripts:addPage("Anti Cheat",1,true,6)
 
 Home:addButton("GodMode",function()
     game.ReplicatedStorage.Server_Data.ImmunityEnabled.Value = true
@@ -45,6 +45,24 @@ end))
 end
 )
 
+AntiCheat:addButton("Anti Cheat Bypass (Gravity)",function()
+local h = game.Workspace
+for i,v in pairs(getconnections(h:GetPropertyChangedSignal"Gravity")) do
+   v:Disable()
+end
+end)
+
+AntiCheat:addButton("Anti Cheat Bypass (fly)",function()
+local h = game.Players.LocalPlayer.Character.HumanoidRootPart
+for i,v in pairs(getconnections(h:GetPropertyChangedSignal"Size")) do
+   v:Disable()
+end
+end)
+
+Home:addButton("FE Admin (press ;)",function()
+loadstring(game:HttpGet("https://pastebin.com/raw/MQ3wc7Zq", true))()
+end)
+
 Other:addButton("Bypass JumpPower",function()
     local old
 old = hookfunction(getrawmetatable(game).__namecall,(function(...)
@@ -77,7 +95,7 @@ Other:addSlider("JumpPower", 50, 350,function(arg)
 end
 )
 
-Home:addButton("Anti Cheat Bypass",function()
+AntiCheat:addButton("Anti Cheat Bypass",function()
 local mt = getrawmetatable(game)
 make_writeable(mt)
 
@@ -94,6 +112,8 @@ mt.__namecall = newcclosure(function(self, ...)
 end)
 end
 )
+
+
 
 Home:addButton("Inf Yield",function()
     loadstring(game:HttpGet(('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'),true))()
