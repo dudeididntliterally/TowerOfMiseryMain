@@ -1,4 +1,4 @@
---Updated
+--Updated x2
 
 local GUI = loadstring(game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/aaaa"))()
 local Scripts = GUI:CreateWindow("Tower Of Misery","Main")
@@ -46,6 +46,10 @@ end
 )
 
 AntiCheat:addButton("Anti Cheat Bypass (Gravity)",function()
+game:GetService("StarterGui"):SetCore("ChatMakeSystemMessage",{
+	Text = "Press On Respawn And Aftr Every Round",
+	Color = Color3.fromRGB(207, 96, 36)
+})
 local h = game.Workspace
 for i,v in pairs(getconnections(h:GetPropertyChangedSignal"Gravity")) do
    v:Disable()
@@ -53,6 +57,10 @@ end
 end)
 
 AntiCheat:addButton("Anti Cheat Bypass (fly)",function()
+game:GetService("StarterGui"):SetCore("ChatMakeSystemMessage",{
+	Text = "Press On Respawn And Aftr Every Round",
+	Color = Color3.fromRGB(207, 96, 36)
+})
 local h = game.Players.LocalPlayer.Character.HumanoidRootPart
 for i,v in pairs(getconnections(h:GetPropertyChangedSignal"Velocity")) do
    v:Disable()
@@ -121,10 +129,10 @@ end
 )
 
 Home:addButton("Gravity Coil (free)",function()
-	game:GetService("StarterGui"):SetCore("ChatMakeSystemMessage",{
-		Text = "Still Breaks: Speed Coil",
-		Color = Color3.fromRGB(207, 96, 36)
-	})
+game:GetService("StarterGui"):SetCore("ChatMakeSystemMessage",{
+	Text = "Still Breaks: Speed Coil",
+	Color = Color3.fromRGB(207, 96, 36)
+})
 local args = {
     [1] = "Gravity Coil"
 }
