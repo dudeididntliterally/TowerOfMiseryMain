@@ -1,4 +1,4 @@
---again x2
+--UPDATED
 
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/kav"))()
 local Window = Library.CreateLib("Tower Of Misery", "DarkTheme")
@@ -6,10 +6,12 @@ local HomeWindow = Window:NewTab("Home")
 local OtherWindow = Window:NewTab("Other")
 local TeleportWindow = Window:NewTab("Teleport")
 local AntiCheatWindow = Window:NewTab("Anti Cheat")
+local FunWindow = Window:NewTab("Fun")
 local Home = HomeWindow:NewSection("Home Section")
 local OtherStuff = OtherWindow:NewSection("OtherStuff")
 local Teleport = TeleportWindow:NewSection("Teleports")
 local AntiCheat = AntiCheatWindow:NewSection("AntiCheat")
+local Fun = FunWindow:NewSection("Fun Stuff")
 
 local player = game.Players.LocalPlayer
 local character = player.Character
@@ -149,6 +151,24 @@ local args = {
 game:GetService("ReplicatedStorage").Remote_Functions.General.Equip_Coil:InvokeServer(unpack(args))
 end
 )
+
+Fun:NewButton("Break Peoples Screens (trading)", "Fun", function()
+_G.breakgame = true
+while _G.breakgame == true do
+wait(6)
+for i, v in pairs(game:GetService("Players"):GetChildren()) do
+local args = {
+    [1] = v
+}
+
+game:GetService("ReplicatedStorage").Crate_System_V2.Remote_Events.Accept_Trade_Request:FireServer(unpack(args))
+end
+end
+end)
+
+Fun:NewButton("Stop Breaking Game", "Fun", function()
+_G.breakgame = false
+end)
 
 OtherStuff:NewButton("Buy Everything", "OtherStuff", function()
 local args = {
