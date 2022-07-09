@@ -1,4 +1,4 @@
---Updated x2
+--ok
 
 local GUI = loadstring(game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/aaaa"))()
 local Scripts = GUI:CreateWindow("Tower Of Misery","Main")
@@ -47,7 +47,7 @@ end
 
 AntiCheat:addButton("Anti Cheat Bypass (Gravity)",function()
 game:GetService("StarterGui"):SetCore("ChatMakeSystemMessage",{
-	Text = "Press On Respawn And Aftr Every Round",
+	Text = "Press On Respawn And After Every Round",
 	Color = Color3.fromRGB(207, 96, 36)
 })
 local h = game.Workspace
@@ -58,7 +58,7 @@ end)
 
 AntiCheat:addButton("Anti Cheat Bypass (fly)",function()
 game:GetService("StarterGui"):SetCore("ChatMakeSystemMessage",{
-	Text = "Press On Respawn And Aftr Every Round",
+	Text = "Press On Respawn And After Every Round",
 	Color = Color3.fromRGB(207, 96, 36)
 })
 local h = game.Players.LocalPlayer.Character.HumanoidRootPart
