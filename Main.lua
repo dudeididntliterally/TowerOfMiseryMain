@@ -1,29 +1,38 @@
---ok
+--again x2
 
-local GUI = loadstring(game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/aaaa"))()
-local Scripts = GUI:CreateWindow("Tower Of Misery","Main")
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/kav"))()
+local Window = Library.CreateLib("Tower Of Misery", "DarkTheme")
+local HomeWindow = Window:NewTab("Home")
+local OtherWindow = Window:NewTab("Other")
+local TeleportWindow = Window:NewTab("Teleport")
+local AntiCheatWindow = Window:NewTab("Anti Cheat")
+local Home = HomeWindow:NewSection("Home Section")
+local OtherStuff = OtherWindow:NewSection("OtherStuff")
+local Teleport = TeleportWindow:NewSection("Teleports")
+local AntiCheat = AntiCheatWindow:NewSection("AntiCheat")
 
-local Home = Scripts:addPage("Home",1,true,6)
-local Other = Scripts:addPage("Others",1,true,6)
-local Teleport = Scripts:addPage("Teleports",1,true,6)
-local AntiCheat = Scripts:addPage("Anti Cheat",1,true,6)
+local player = game.Players.LocalPlayer
+local character = player.Character
+local HumanoidRootPart = character.HumanoidRootPart
+local Rep = game.ReplicatedStorage
+local Workspace = game.Workspace
 
-Home:addButton("GodMode",function()
-    game.ReplicatedStorage.Server_Data.ImmunityEnabled.Value = true
+Home:NewButton("God Mode", "Home", function()
+    Rep.Server_Data.ImmunityEnabled.Value = true
 end
 )
 
-Home:addButton("Fly (e = toggle)",function()
+Home:NewButton("Fly (e = toggle)", "Home", function()
 loadstring(game:HttpGet('https://pastebin.com/raw/d32zM888'))()
 end
 )
 
-Teleport:addButton("TP To Top",function()
+Teleport:NewButton("TP To Top", "Teleport", function()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-117.169624, 253.999847, 49.9136276)
 end
 )
 
-Other:addButton("Bypass WalkSpeed",function()
+OtherStuff:NewButton("Old Bypass WalkSpeed","OtherStuff",function()
     local old
 old = hookfunction(getrawmetatable(game).__namecall,(function(...)
     local args = {...}
@@ -45,7 +54,7 @@ end))
 end
 )
 
-AntiCheat:addButton("Anti Cheat Bypass (Gravity)",function()
+AntiCheat:NewButton("Anti Cheat Bypass (Fly)", "AntiCheat", function()
 game:GetService("StarterGui"):SetCore("ChatMakeSystemMessage",{
 	Text = "Press On Respawn And After Every Round",
 	Color = Color3.fromRGB(207, 96, 36)
@@ -56,7 +65,7 @@ for i,v in pairs(getconnections(h:GetPropertyChangedSignal"Gravity")) do
 end
 end)
 
-AntiCheat:addButton("Anti Cheat Bypass (fly)",function()
+AntiCheat:NewButton("Anti Cheat Bypass (Gravity)", "AntiCheat", function()
 game:GetService("StarterGui"):SetCore("ChatMakeSystemMessage",{
 	Text = "Press On Respawn And After Every Round",
 	Color = Color3.fromRGB(207, 96, 36)
@@ -67,11 +76,11 @@ for i,v in pairs(getconnections(h:GetPropertyChangedSignal"Velocity")) do
 end
 end)
 
-Home:addButton("FE Admin (press ;)",function()
+Home:NewButton("FE Admin (press ;)", "Home", function()
 loadstring(game:HttpGet("https://pastebin.com/raw/MQ3wc7Zq", true))()
 end)
 
-Other:addButton("Bypass JumpPower",function()
+OtherStuff:NewButton("Old Bypass JumpPower", "OtherStuff", function()
     local old
 old = hookfunction(getrawmetatable(game).__namecall,(function(...)
     local args = {...}
@@ -93,17 +102,17 @@ end))
 end
 )
 
-Other:addSlider("Speed", 16, 300,function(arg)
+OtherStuff:NewSlider("WalkSpeed", "Home", 300, 16, function(arg)
     game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = arg
 end
 )
 
-Other:addSlider("JumpPower", 50, 350,function(arg)
+OtherStuff:NewSlider("JumpPower", "Home", 350, 50, function(arg)
     game.Players.LocalPlayer.Character.Humanoid.JumpPower = arg
 end
 )
 
-AntiCheat:addButton("Anti Cheat Bypass",function()
+AntiCheat:NewButton("Anti Cheat Bypass", "AntiCheat", function()
 local mt = getrawmetatable(game)
 make_writeable(mt)
 
@@ -123,12 +132,12 @@ end
 
 
 
-Home:addButton("Inf Yield",function()
+Home:NewButton("Inf Yield", "Home", function()
     loadstring(game:HttpGet(('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'),true))()
 end
 )
 
-Home:addButton("Gravity Coil (free)",function()
+Home:NewButton("Gravity Coil (free)", "Home", function()
 game:GetService("StarterGui"):SetCore("ChatMakeSystemMessage",{
 	Text = "Still Breaks: Speed Coil",
 	Color = Color3.fromRGB(207, 96, 36)
@@ -141,14 +150,7 @@ game:GetService("ReplicatedStorage").Remote_Functions.General.Equip_Coil:InvokeS
 end
 )
 
-Teleport:addButton("Auto Farm (NOT WORKING)",function()
-    warn("not working")
-    wait(0.5)
-    print("not working")
-end
-)
-
-Other:addButton("Buy Everything",function()
+OtherStuff:NewButton("Buy Everything", "OtherStuff", function()
 local args = {
     [1] = "QuickSpawn"
 }
@@ -195,7 +197,7 @@ print("Auto Bought Everything!")
 end
 )
 
-Home:addButton("Auto Respawn",function()
+Home:NewButton("Auto Respawn", "Home", function()
 	game:GetService("StarterGui"):SetCore("ChatMakeSystemMessage",{
 		Text = "UPDATE: ONLY PRESS ONCE OR IT FIRES THE REMOTE MORE, ALSO PRESS AFTER EVERY ROUND (same location)",
 		Color = Color3.fromRGB(207, 96, 36)
@@ -248,7 +250,7 @@ end
 end
 end)
 
-Other:addButton("Get Sword",function()
+OtherStuff:NewButton("Get Sword", "OtherStuff", function()
 	game:GetService("StarterGui"):SetCore("ChatMakeSystemMessage",{
 		Text = "Using this will teleport you back to the winners room every round so just teleport back with the teleport to top",
 		Color = Color3.fromRGB(207, 96, 36)
@@ -271,7 +273,7 @@ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-117.169
 end
 )
 
-Teleport:addButton("TP Winners Room",function()
+Teleport:NewButton("TP To Winners Room", "Teleport", function()
 local playerHead = game.Players.LocalPlayer.Character.Head
 for i, v in pairs(game:GetService("Workspace").TopSection.PortalTeleportationModel.PortalDoor:GetDescendants()) do
     if v.Name == "TouchInterest" and v.Parent then
@@ -286,12 +288,12 @@ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(36.13695
 end
 )
 
-Teleport:addButton("Flappy Bird",function()
+Teleport:NewButton("Flappy Bird", "Teleport", function()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-54.7847023, 234.399963, 2805.98145)
 end
 )
 
-Teleport:addButton("Track Slide",function()
+Teleport:NewButton("Track Slide", "Teleport", function()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-53.9553223, 234.199951, 2824.10547)
 end
 )
