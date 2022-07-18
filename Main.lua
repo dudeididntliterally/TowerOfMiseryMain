@@ -1,4 +1,4 @@
---UPDATED
+--Newest UI
 
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/kav"))()
 local Window = Library.CreateLib("Tower Of Misery", "DarkTheme")
@@ -18,6 +18,12 @@ local character = player.Character
 local HumanoidRootPart = character.HumanoidRootPart
 local Rep = game.ReplicatedStorage
 local Workspace = game.Workspace
+
+wait()
+game:GetService("StarterGui"):SetCore("ChatMakeSystemMessage",{
+	Text = "Designed And Mostly Coded By BIGDAWGZACK#8318",
+	Color = Color3.fromRGB(207, 96, 36)
+})
 
 Home:NewButton("God Mode", "Home", function()
     Rep.Server_Data.ImmunityEnabled.Value = true
@@ -75,6 +81,14 @@ game:GetService("StarterGui"):SetCore("ChatMakeSystemMessage",{
 local h = game.Players.LocalPlayer.Character.HumanoidRootPart
 for i,v in pairs(getconnections(h:GetPropertyChangedSignal"Velocity")) do
    v:Disable()
+end
+end)
+
+Fun:NewButton("Collect All Orbs", "Fun", function()
+for i,v in pairs(workspace:GetDescendants()) do
+    if v.Name == "Magic_Orb" then
+        firetouchinterest(v, game.Players.LocalPlayer.Character.Head, 0)
+    end
 end
 end)
 
@@ -164,9 +178,38 @@ local args = {
 game:GetService("ReplicatedStorage").Crate_System_V2.Remote_Events.Accept_Trade_Request:FireServer(unpack(args))
 end
 end
+while wait() do
+game:GetService("ReplicatedStorage").GameAnalyticsError:Destroy()
+wait()
+game:GetService("ReplicatedStorage").Postie.Sent:Destroy()
+end
 end)
 
-Fun:NewButton("Stop Breaking Game", "Fun", function()
+Fun:NewButton("Mess With The Game (needs $1300)", "Fun", function()
+game:GetService("StarterGui"):SetCore("ChatMakeSystemMessage",{
+	Text = "You need around $1300 from the paw's event to do this (auto buys it) unless you want to buy just 1 thats boring lol i don't know why i made this though",
+	Color = Color3.fromRGB(207, 96, 36)
+})
+local args = {
+   [1] = "5"
+}
+
+game:GetService("ReplicatedStorage").Remote_Functions.Paws_Event.Shop_Purchase:InvokeServer(unpack(args))
+wait()
+local args = {
+    [1] = "18"
+}
+
+game:GetService("ReplicatedStorage").Remote_Functions.Paws_Event.Shop_Purchase:InvokeServer(unpack(args))
+wait()
+local args = {
+    [1] = "19"
+}
+
+game:GetService("ReplicatedStorage").Remote_Functions.Paws_Event.Shop_Purchase:InvokeServer(unpack(args))
+end)
+
+Fun:NewButton("Stop Messing With People's Screens", "Fun", function()
 _G.breakgame = false
 end)
 
