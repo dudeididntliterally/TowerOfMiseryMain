@@ -1,4 +1,4 @@
---Newest UI
+--Latest Version.
 
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/kav"))()
 local Window = Library.CreateLib("Tower Of Misery", "DarkTheme")
@@ -92,10 +92,6 @@ for i,v in pairs(workspace:GetDescendants()) do
 end
 end)
 
-Home:NewButton("FE Admin (press ;)", "Home", function()
-loadstring(game:HttpGet("https://pastebin.com/raw/MQ3wc7Zq", true))()
-end)
-
 OtherStuff:NewButton("Old Bypass JumpPower", "OtherStuff", function()
     local old
 old = hookfunction(getrawmetatable(game).__namecall,(function(...)
@@ -155,7 +151,7 @@ end
 
 Home:NewButton("Gravity Coil (free)", "Home", function()
 game:GetService("StarterGui"):SetCore("ChatMakeSystemMessage",{
-	Text = "Still Breaks: Speed Coil",
+	Text = "Press as many times as you want.",
 	Color = Color3.fromRGB(207, 96, 36)
 })
 local args = {
